@@ -1,0 +1,5 @@
+{
+  "name": "AI Slide Generator",
+  "description": "An application that uses AI to generate presentation slide structures from user input, focusing on 2-pane comparisons. It leverages the Gemini API for content generation and provides a preview of the slides.",
+  "requestFramePermissions": []
+}
