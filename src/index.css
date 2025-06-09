@@ -1,0 +1,290 @@
+/* Import Google Fonts (previously in index.html) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Google+Sans:wght@400;500;700&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Start of content from src/styles/themes.css --- */
+/* Base variables shared across themes or as fallbacks if needed */
+:root {
+  --spacing-unit: 8px;
+  --font-family-sans: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-display: "Google Sans", "Product Sans", "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-default: 0.375rem; /* 6px */
+  --border-radius-md: 0.5rem; /* 8px */
+  --border-radius-lg: 0.75rem; /* 12px */
+  --border-radius-xl: 1rem; /* 16px */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-default: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+  --transition-duration-short: 150ms;
+  --transition-duration-medium: 300ms;
+  --transition-duration-long: 500ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme (Default) */
+body.theme-light, :root { /* :root ensures defaults if class not yet applied */
+  --theme-primary: #1a73e8; /* google-blue */
+  --theme-primary-variant: #1557b0; /* darker blue */
+  --theme-secondary: #34a853; /* google-green */
+  --theme-secondary-variant: #2b8a44; /* darker green */
+  --theme-accent: #fbbc05; /* google-yellow */
+  --theme-background: #f8f9fa; /* google-grey-50 / Very light grey */
+  --theme-surface: #ffffff; /* White */
+  --theme-surface-alt: #f1f3f4; /* google-grey-100 / Off-white */
+  --theme-border: #dadce0; /* google-grey-300 */
+  --theme-text-primary: #202124; /* google-grey-900 / Almost black */
+  --theme-text-secondary: #5f6368; /* google-grey-700 / Dark grey */
+  --theme-text-disabled: #9aa0a6; /* google-grey-500 / Medium grey */
+  --theme-text-on-primary: #ffffff;
+  --theme-text-on-secondary: #ffffff;
+  --theme-error: #ea4335; /* google-red */
+  --theme-warning: #fbbc05; /* google-yellow */
+  --theme-success: #34a853; /* google-green */
+  --theme-info: #1a73e8; /* google-blue for info */
+}
+
+/* Dark Theme */
+body.theme-dark {
+  --theme-primary: #8ab4f8; /* Lighter blue for dark mode */
+  --theme-primary-variant: #aecbfa;
+  --theme-secondary: #81c995; /* Lighter green */
+  --theme-secondary-variant: #a0d3b0;
+  --theme-accent: #fdd663; /* Lighter yellow */
+  --theme-background: #202124; /* google-grey-900 / Very dark grey */
+  --theme-surface: #303134; /* Darker surface */
+  --theme-surface-alt: #3c4043; /* google-grey-800 / Even darker */
+  --theme-border: #5f6368; /* google-grey-700 */
+  --theme-text-primary: #e8eaed; /* Light grey text */
+  --theme-text-secondary: #bdc1c6; /* Medium-light grey text */
+  --theme-text-disabled: #80868b; /* google-grey-600 */
+  --theme-text-on-primary: #202124;
+  --theme-text-on-secondary: #202124;
+  --theme-error: #f28b82; /* Lighter red */
+  --theme-warning: #fdd663; /* Lighter yellow */
+  --theme-success: #81c995; /* Lighter green */
+  --theme-info: #8ab4f8; /* Lighter blue for info */
+}
+
+/* High Contrast Theme */
+body.theme-high-contrast {
+  --theme-primary: #0053cf; /* Stronger Blue */
+  --theme-primary-variant: #003b93;
+  --theme-secondary: #006427; /* Stronger Green */
+  --theme-secondary-variant: #00461c;
+  --theme-accent: #c58300; /* Stronger Yellow/Orange */
+  --theme-background: #ffffff; /* White */
+  --theme-surface: #f0f0f0; /* Very Light Grey */
+  --theme-surface-alt: #e0e0e0; 
+  --theme-border: #000000; /* Black border */
+  --theme-text-primary: #000000; /* Black text */
+  --theme-text-secondary: #1f1f1f; /* Slightly lighter black */
+  --theme-text-disabled: #505050; /* Dark Grey */
+  --theme-text-on-primary: #ffffff;
+  --theme-text-on-secondary: #ffffff;
+  --theme-error: #c50000; /* Strong Red */
+  --theme-warning: #c58300; /* Strong Yellow/Orange */
+  --theme-success: #006427; /* Strong Green */
+  --theme-info: #0053cf; /* Strong Blue */
+
+  --shadow-sm: 0 1px 1px 0 rgb(0 0 0 / 0.2);
+  --shadow-default: 0 2px 3px 0 rgb(0 0 0 / 0.2);
+  --shadow-md: 0 3px 5px -1px rgb(0 0 0 / 0.2);
+  --shadow-lg: 0 5px 8px -2px rgb(0 0 0 / 0.2);
+  --shadow-xl: 0 10px 13px -3px rgb(0 0 0 / 0.2);
+  --shadow-inner: inset 0 1px 2px 0 rgb(0 0 0 / 0.2);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body, :root {
+    --transition-duration-short: 1ms;
+    --transition-duration-medium: 1ms;
+    --transition-duration-long: 1ms;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* --- End of content from src/styles/themes.css --- */
+
+/* --- Start of content from src/styles/animations.css --- */
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn var(--transition-duration-medium) var(--transition-timing-function) forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Subtle scale-up hover effect for interactive elements */
+.interactive-scale {
+  transition-property: transform, box-shadow;
+  transition-duration: var(--transition-duration-short);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.interactive-scale:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: var(--shadow-md);
+}
+.interactive-scale:focus-visible:not(:disabled) {
+    outline: 2px solid var(--theme-primary);
+    outline-offset: 2px;
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* Slide-in from bottom for modals or popups */
+.slide-in-bottom {
+  animation: slideInBottom var(--transition-duration-medium) var(--transition-timing-function) forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes slideInBottom {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Loading spinner animation (if not using SVG specific one) */
+.spinner {
+  width: 2rem; /* 32px */
+  height: 2rem; /* 32px */
+  border-radius: 50%;
+  border: 3px solid var(--theme-border);
+  border-top-color: var(--theme-primary);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* --- End of content from src/styles/animations.css --- */
+
+/* Base body styles using theme variables */
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--theme-background);
+  color: var(--theme-text-primary);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: var(--transition-timing-function);
+  transition-duration: var(--transition-duration-medium);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Custom scrollbar example */
+.fancy-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.fancy-scrollbar::-webkit-scrollbar-track {
+  background: var(--theme-surface-alt);
+  border-radius: 4px;
+}
+.fancy-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 4px;
+}
+.fancy-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-disabled);
+}
+
+/* Slide specific styles (previously from Prompt 1.4, adapted to CSS vars) */
+.slide-container {
+  width: 100%; /* Made responsive */
+  /* height: 600px; Not fixed height anymore, aspect ratio will handle it */
+  aspect-ratio: 4 / 3;
+  background: var(--theme-surface); /* Use theme surface for slide background */
+  border: 1px solid var(--theme-border);
+  border-radius: var(--border-radius-md); /* 8px */
+  box-shadow: var(--shadow-lg); /* Use theme shadow */
+  padding: 40px; /* This might be too large for responsive, adjust in components */
+  box-sizing: border-box;
+  font-family: var(--font-family-display), var(--font-family-sans); /* Use theme fonts */
+  overflow: hidden; /* Prevent content overflow from breaking layout */
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-title {
+  font-size: 28px; /* Consider making responsive with media queries or clamp */
+  font-weight: 600;
+  color: var(--theme-primary); /* Use theme primary color */
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.pane-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--theme-text-primary); /* Use theme text color */
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.slide-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--theme-text-secondary); /* Use theme secondary text color */
+  list-style: none;
+  padding: 0;
+}
+
+.slide-content li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.slide-content li::before {
+  content: "•";
+  color: var(--theme-primary); /* Use theme primary color for bullets */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0; /* Adjust alignment */
+}
+
+/* Example of how Tailwind config might be set if not using CDN's inline config */
+/* This is illustrative as Tailwind is not configured through this file directly */
+/* You would typically have a tailwind.config.js for this */
+/*
+@layer base {
+  html {
+    font-family: var(--font-family-sans);
+  }
+}
+*/

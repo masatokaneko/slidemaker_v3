@@ -1,0 +1,5 @@
+{
+  "name": "AI Slide Generation System",
+  "description": "An application that uses AI to generate 2-pane comparison slide presentations from Japanese text input, leveraging the Gemini API.",
+  "requestFramePermissions": []
+}
